@@ -31,8 +31,8 @@ module.exports = function(environment) {
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
 
   //ENV.GOURL='http://119.81.218.178:8082';
-  //ENV.GOURL='https://commercialinsurancenode.herokuapp.com';
-   ENV.GOURL='http://192.168.0.20:8082';
+  ENV.GOURL='https://commercialinsurancenode.herokuapp.com';
+  // ENV.GOURL='http://192.168.0.20:8082';
 
 
   }

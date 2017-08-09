@@ -7,6 +7,7 @@ export default Ember.Route.extend({
          this.controllerFor('insurerdashboard').set('isShowingrejection', false);
           this.controllerFor('insurerdashboard').set('Notifiedstatuscount', null);
            this.controllerFor('insurerdashboard').set('examinedstatuscount', null);
+            this.controllerFor('insurerdashboard').set('Settledstatuscount', null);
     var mycontroller = this;
         var insurertoken = this.controllerFor('application').get('insurertoken');
         console.log('message :' +sessionStorage.getItem('insurertoken'));

@@ -145,6 +145,7 @@ export default Ember.Controller.extend(Validations, {
                             console.log(JSON.stringify(response));
                             var errmsg = response.responseJSON.message;
                             console.log("Error Message: " + errmsg);
+                             alert(errmsg);
                             if(errmsg === "Invalid Credentials emailid or password must be incorrect!"){
                                 alert("Your Email id or Password is Incorrect");
                                 //mycontroller.set("showerrormsg",true);
@@ -202,6 +203,7 @@ export default Ember.Controller.extend(Validations, {
                             console.log(JSON.stringify(response));
                             var errmsg = response.responseJSON.message;
                             console.log("Error Message: " + errmsg);
+                            alert("Your Email id or Password is Incorrect");
                             if(errmsg === "Invalid Credentials emailid or password must be incorrect!"){
                                 alert("Your Email id or Password is Incorrect");
                                 //mycontroller.set("showerrormsg",true);
