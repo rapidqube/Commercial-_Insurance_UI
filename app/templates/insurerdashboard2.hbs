@@ -66,24 +66,6 @@
                 <div class="scroll">
                     <form role="form">
 
-                   <!-- <label class="col-sm-12" style="color:red"><b>Insurer Details :</b></label>
-                    <div class="form-group col-sm-12" style="width:650px;border: solid;margin-left:20px;margin-right:40px">       
-                        <div class="form-group  col-sm-12">
-                            <label for="exampleInputEmail1">Title :</label>
-                        {{validated-input type="text" model=this valuePath='title' placeholder="Enter Claim Title" }}
-                        </div>
-                        <div class="form-group col-sm-12">
-                            <label for="exampleInputEmail1">Damage Details :</label>
-                        {{textarea class="form-control" rows="4" maxlength="500" value=damagecontent valuePath="damagedetails" placeholder="Enter damage details decription" }}
-                        </div>
-                        <div class="form-group col-sm-12">
-                            <div class="col-sm-6">
-                            <button type="submit" class="btn agree-btn-default" {{action 'notifyclaim'}} >Notify Claim</button>
-                            </div>
-                            
-                        </div>
-                    </div> -->
-
                <!-- for new claim form-->     
                     {{#if showformdetails }}
                     <label class="col-sm-12" style="color:red"><b>Insurer Details :</b></label>
@@ -179,13 +161,15 @@
                             </div>-->
                         {{/if}}
 
+                        
+               <!-- for submit detail  form-->   
                         {{#if showotherformdetails }}
                         <label class="col-sm-12" style="color:red"><b>Insurer Details :</b></label>
-                    <div class="form-group col-sm-12" style="width:650px;border: solid;margin-left:20px;margin-right:40px">       
+                    <div class="form-group col-sm-12" style="width:650px;border: solid;margin-left:20px;margin-right:40px;background:gray">       
                         <div class="form-group  col-sm-12">
                             <label for="exampleInputEmail1">Title :</label>
                         {{!--{{validated-input type="text" model=this valuePath='title' placeholder="Enter Claim Title" }}--}}
-                        <br/> <input type="text"  value={{title}} placeholder="Enter Claim Title" disabled>
+                        <br/> <input type="text"  value={{title}} placeholder="Enter Claim Title" size="50" disabled>
                         </div>
                         <div class="form-group col-sm-12">
                             <label for="exampleInputEmail1">Damage Details :</label>
@@ -216,7 +200,7 @@
                     </div>
 
                     <label class="col-sm-12" style="color:red">Examinar Details :</label>
-                    <div class="form-group col-sm-12" style="width:650px;border: solid;margin-left:20px;margin-right:40px">
+                    <div class="form-group col-sm-12" style="width:650px;border: solid;margin-left:20px;margin-right:40px;background:gray">
                         <div class="form-group  col-sm-12">
                             <label for="exampleInputPassword1"> Rejection Remark  :</label>
                             <br/> <textarea class="form-control" rows="3" maxlength="500" value={{remark}} valuePath="damagedetails" placeholder="Add remark of rejection of Claim" disabled></textarea>
@@ -232,7 +216,7 @@
                             
                     </div>   
                             <label class="col-sm-12" style="color:red">Negotiation Part :</label>
-                        <div class="form-group col-sm-12" style="width:650px;border: solid;margin-left:20px;margin-right:40px">
+                        <div class="form-group col-sm-12" style="width:650px;border: solid;margin-left:20px;margin-right:40px;background:gray">
                             
                         <div class="inner-scroll">
                         
@@ -293,7 +277,7 @@
                             <div class="form-group col-sm-3"></div>-->
                     </div>
                                 
-                            <div class="form-group col-sm-12">
+                            <div class="form-group col-sm-12"  style="width:650px;border: solid;margin-left:20px;margin-right:20px;background:gray">
                                 <label for="exampleInputPassword1">Approved Claim :</label>
                                
                                 <br/><input type="text"  value={{approvedclaim}} size="50" disabled>
