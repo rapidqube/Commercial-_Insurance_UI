@@ -66,6 +66,26 @@
                 <div class="scroll">
                     <form role="form">
 
+                   <!-- <label class="col-sm-12" style="color:red"><b>Insurer Details :</b></label>
+                    <div class="form-group col-sm-12" style="width:650px;border: solid;margin-left:20px;margin-right:40px">       
+                        <div class="form-group  col-sm-12">
+                            <label for="exampleInputEmail1">Title :</label>
+                        {{validated-input type="text" model=this valuePath='title' placeholder="Enter Claim Title" }}
+                        </div>
+                        <div class="form-group col-sm-12">
+                            <label for="exampleInputEmail1">Damage Details :</label>
+                        {{textarea class="form-control" rows="4" maxlength="500" value=damagecontent valuePath="damagedetails" placeholder="Enter damage details decription" }}
+                        </div>
+                        <div class="form-group col-sm-12">
+                            <div class="col-sm-6">
+                            <button type="submit" class="btn agree-btn-default" {{action 'notifyclaim'}} >Notify Claim</button>
+                            </div>
+                            
+                        </div>
+                    </div> -->
+
+               <!-- for new claim form-->     
+                    {{#if showformdetails }}
                     <label class="col-sm-12" style="color:red"><b>Insurer Details :</b></label>
                     <div class="form-group col-sm-12" style="width:650px;border: solid;margin-left:20px;margin-right:40px">       
                         <div class="form-group  col-sm-12">
@@ -83,7 +103,7 @@
                             
                         </div>
                     </div> 
-                    {{#if showformdetails }}
+
                     <label class="col-sm-12" style="color:red"><b>Insurer Details :</b></label>
                     <div class="form-group col-sm-12" style="width:650px;border: solid;margin-left:20px;margin-right:40px">       
                         <div class="form-group col-sm-12">
@@ -158,7 +178,27 @@
                                 <button type="submit" class="btn btn-default" style="background-color:blue">Submit</button>
                             </div>-->
                         {{/if}}
+
                         {{#if showotherformdetails }}
+                        <label class="col-sm-12" style="color:red"><b>Insurer Details :</b></label>
+                    <div class="form-group col-sm-12" style="width:650px;border: solid;margin-left:20px;margin-right:40px">       
+                        <div class="form-group  col-sm-12">
+                            <label for="exampleInputEmail1">Title :</label>
+                        {{!--{{validated-input type="text" model=this valuePath='title' placeholder="Enter Claim Title" }}--}}
+                        <br/> <input type="text"  value={{title}} placeholder="Enter Claim Title" disabled>
+                        </div>
+                        <div class="form-group col-sm-12">
+                            <label for="exampleInputEmail1">Damage Details :</label>
+                        {{!--{{textarea class="form-control" rows="4" maxlength="500" value=damagecontent valuePath="damagedetails" placeholder="Enter damage details decription" }}--}}
+                       <br/> <textarea class="form-control" rows="4" maxlength="500" value={{damagecontent}} valuePath="damagedetails" placeholder="Enter damage details decription" disabled></textarea>
+                        </div>
+                        <div class="form-group col-sm-12">
+                            <div class="col-sm-6">
+                            <button type="submit" class="btn agree-btn-default" {{action 'notifyclaim'}} disabled>Notify Claim</button>
+                            </div>
+                            
+                        </div>
+                    </div> 
                                 <div class="form-group col-sm-12" style="width:650px;border: solid;margin-left:20px;margin-right:40px">       
                                 <div class="form-group col-sm-12">
                                     <label for="exampleInputPassword1">Total Damage Value :</label>

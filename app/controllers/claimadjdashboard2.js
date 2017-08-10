@@ -134,8 +134,8 @@ export default Ember.Controller.extend(Validations, {
                        console.log("approvedclaim :"+approvedclaim);
                        mycontroller.set('approvedclaim',approvedclaim);*/
                     if (message === 'claim  approved Sucessfully !') {
-                        mycontroller.set("showapprovedclaim", true);
-                       mycontroller.toggleProperty('isShowingModals',true);
+                       // mycontroller.set("showapprovedclaim", true);
+                     //  mycontroller.toggleProperty('isShowingModals',true);
                        
 
                         //inside ajax call to get approve-claim value
@@ -156,8 +156,8 @@ export default Ember.Controller.extend(Validations, {
                                 console.log("approvedclaim :" + approvedclaim);
                                 mycontroller.set('approvedclaim', approvedclaim);
                                 if (message === 'claim  approved Sucessfully !') {
-                                    mycontroller.set("isShowapprovedclaim", true);
-                                    mycontroller.toggleProperty('isShowapprovedclaim');
+                                   // mycontroller.set("isShowapprovedclaim", true);
+                                  //  mycontroller.toggleProperty('isShowapprovedclaim');
                                     //mycontroller.set("showotherformdetails",true);
                                 }
 
@@ -182,6 +182,7 @@ export default Ember.Controller.extend(Validations, {
             });
 
         },
+        //this function call on payment button to settle the claim
         paymentsubmit: function() {
 
             var myclaimno = this.get('claimno');
@@ -232,6 +233,7 @@ export default Ember.Controller.extend(Validations, {
 
 
         },
+        
         //to add rejection remark
         addremark:function(){
             var myclaimno=this.get('claimno');
