@@ -40,6 +40,7 @@ export default Ember.Controller.extend(Validations,{
 isShowingModal:false,
 showformdetails:true,
 showotherformdetails:false,
+ testlist: ['Fundamental', 'JAVA', 'Language', ],
     actions:{
         notifyclaim: function(){
             let{

@@ -65,11 +65,11 @@
     <div class ="claim-middle-container" style="width: 60%; float:left">
         <div class="panel panel-primary" style="margin-left:10px;width:120%">
             <div class="panel-heading"> Claim Details</div>
-                <div class="scroll1">
+                <!--<div class="scroll1">-->
                 <form role="form">
                     {{#if isshowclaimform}}
                         <label class="col-sm-12" style="color:red"><b>Insurer Details :</b></label>
-                        <div class="form-group col-sm-12" style="width:650px;border: solid;margin-left:20px;margin-right:20px;background:gray">       
+                        <div class="form-group col-sm-12" style="width:650px;border: solid;margin-left:20px;margin-right:20px;background:#C0C0C0">       
                             <div class="form-group  col-sm-12">
                                 <label for="exampleInputEmail1">Title :</label>
                                    {{!-- {{validated-input type="text" model=this valuePath='title' placeholder="Enter Title" }}--}}
@@ -89,7 +89,7 @@
                                 </div>-->
                             </div>
                         </div>  
-                            <div class="form-group col-sm-12" style="width:650px;border: solid;margin-left:20px;margin-right:20px;background:gray">       
+                            <div class="form-group col-sm-12" style="width:650px;border: solid;margin-left:20px;margin-right:20px;background:#C0C0C0">       
                                 <div class="form-group col-sm-12">
                                      <label for="exampleInputPassword1">Total Damage Value</label>
                                      {{!--{{validated-input type="text" model=this valuePath='totaldamagevalue' placeholder="Enter your first name" disabled=isInvalid}}--}}
@@ -180,13 +180,13 @@
             </div>
             <div class="form-group col-sm-3"></div>
     </div>
-            <div class="form-group col-sm-12" style="width:650px;border: solid;margin-left:20px;margin-right:20px;background:gray">
+            <div class="form-group col-sm-12" style="width:650px;border: solid;margin-left:20px;margin-right:20px;background:#C0C0C0">
                             <label for="exampleInputPassword1">Approved Claim :</label>
                             {{!--{{validated-input type="text" model=this valuePath='payoutcalculated' placeholder="Enter your approved claim" }}--}}
                             <br/><input type="text"  value={{approvedclaim}} placeholder="Enter your approved claim" size="40" disabled>
                         </div> 
                 </form>
-            </div>
+           <!-- </div>-->
         </div>
     </div>
 

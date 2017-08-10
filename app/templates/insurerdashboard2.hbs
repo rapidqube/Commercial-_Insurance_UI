@@ -63,7 +63,7 @@
     <div class ="claim-middle-container" style="width: 50%; float:left">
         <div class="panel panel-primary"style="margin-left:10px;width:120%">
             <div class="panel-heading"> New Claim Form</div>
-                <div class="scroll">
+                <!--<div class="scroll">-->
                     <form role="form">
 
                <!-- for new claim form-->     
@@ -87,7 +87,7 @@
                     </div> 
 
                     <label class="col-sm-12" style="color:red"><b>Insurer Details :</b></label>
-                    <div class="form-group col-sm-12" style="width:650px;border: solid;margin-left:20px;margin-right:40px">       
+                    <div class="form-group col-sm-12" style="width:650px;border: solid;margin-left:20px;margin-right:40px;background:#C0C0C0">       
                         <div class="form-group col-sm-12">
                             <label for="exampleInputPassword1">Total Damage Value</label>
                             {{!--  {{validated-input type="text" model=this valuePath='totaldamagevalue' placeholder="Enter Damage value" disabled=disabled}}--}}
@@ -104,7 +104,7 @@
                     </div>
 
                     <label class="col-sm-12" style="color:red">Examinar Details :</label>
-                        <div class="form-group col-sm-12" style="width:650px;border: solid;margin-left:20px;margin-right:40px">
+                        <div class="form-group col-sm-12" style="width:650px;border: solid;margin-left:20px;margin-right:40px;background:#C0C0C0">
                         <div class="form-group  col-sm-12">
                             <label for="exampleInputPassword1">Assessed Damage Value :</label>
                             {{!-- {{validated-input type="text" model=this valuePath='assesseddamagevalue' placeholder="Enter your first name" }}--}}
@@ -118,7 +118,7 @@
                             
                         </div>   
                             <label class="col-sm-12" style="color:red">Negotiation Part :</label>
-                        <div class="form-group col-sm-12" style="width:650px;border: solid;margin-left:20px;margin-right:40px">
+                        <div class="form-group col-sm-12" style="width:650px;border: solid;margin-left:20px;margin-right:40px;background:#C0C0C0">
                             
                             <div class="form-group col-sm-12">
                                 <label for="exampleInputPassword1">Negotiated 1:</label>
@@ -165,7 +165,7 @@
                <!-- for submit detail  form-->   
                         {{#if showotherformdetails }}
                         <label class="col-sm-12" style="color:red"><b>Insurer Details :</b></label>
-                    <div class="form-group col-sm-12" style="width:650px;border: solid;margin-left:20px;margin-right:40px;background:gray">       
+                    <div class="form-group col-sm-12" style="width:650px;border: solid;margin-left:20px;margin-right:40px;background:#C0C0C0">       
                         <div class="form-group  col-sm-12">
                             <label for="exampleInputEmail1">Title :</label>
                         {{!--{{validated-input type="text" model=this valuePath='title' placeholder="Enter Claim Title" }}--}}
@@ -195,12 +195,16 @@
 
                             </div>
                             <div class="form-group col-sm-12">
+                                <label for="exampleInputPassword1">Select Public Adjuster :</label>
+                             {{select-component dropdowntype="test" listitem=testlist selecteditemlist=selectedtest}}
+                            </div>
+                            <div class="form-group col-sm-12">
                                 <button type="submit" class="btn agree-btn-default"{{action 'submitdetails'}}>Submit Details</button>
                             </div>
                     </div>
 
                     <label class="col-sm-12" style="color:red">Examinar Details :</label>
-                    <div class="form-group col-sm-12" style="width:650px;border: solid;margin-left:20px;margin-right:40px;background:gray">
+                    <div class="form-group col-sm-12" style="width:650px;border: solid;margin-left:20px;margin-right:40px;background:#C0C0C0">
                         <div class="form-group  col-sm-12">
                             <label for="exampleInputPassword1"> Rejection Remark  :</label>
                             <br/> <textarea class="form-control" rows="3" maxlength="500" value={{remark}} valuePath="damagedetails" placeholder="Add remark of rejection of Claim" disabled></textarea>
@@ -216,7 +220,7 @@
                             
                     </div>   
                             <label class="col-sm-12" style="color:red">Negotiation Part :</label>
-                        <div class="form-group col-sm-12" style="width:650px;border: solid;margin-left:20px;margin-right:40px;background:gray">
+                        <div class="form-group col-sm-12" style="width:650px;border: solid;margin-left:20px;margin-right:40px;background:#C0C0C0">
                             
                         <div class="inner-scroll">
                         
@@ -286,7 +290,7 @@
                             
                         {{/if}}
                     </form>
- </div>
+ <!--</div>-->
  </div>
 </div>
  

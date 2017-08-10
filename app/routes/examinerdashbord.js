@@ -4,6 +4,8 @@ import CONFIG from 'cm-insurance/config/environment';
 export default Ember.Route.extend({
     model(){
         this.controllerFor('examinerdashbord').set('Submittedstatuscount',null);
+        this.controllerFor('examinerdashbord').set('approvedstatuscount', null);
+        
         var examinertoken = sessionStorage.getItem('token') ;
         console.log('claimadjustertoken from model :' +examinertoken);
         this.controllerFor('examinerdashbord').set('examinertoken', examinertoken);

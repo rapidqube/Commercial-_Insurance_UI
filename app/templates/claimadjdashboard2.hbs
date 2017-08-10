@@ -64,7 +64,7 @@
     <div class ="claim-middle-container" style="width: 60%; float:left">
         <div class="panel panel-primary"  style="margin-left:10px;width:120%">
             <div class="panel-heading"> All Claim Details</div>
-                <div class="scroll1">
+                <!--<div class="scroll1">-->
                 <form role="form">
                     {{#if isshowclaimform}}
                         <label class="col-sm-12" style="color:red"><b>Insurer Details :</b></label>
@@ -85,7 +85,7 @@
                             
                             </div>
                         </div>  
-                            <div class="form-group col-sm-12" style="width:650px;border: solid;margin-left:20px;margin-right:40px;background:gray">       
+                            <div class="form-group col-sm-12" style="width:650px;border: solid;margin-left:20px;margin-right:40px;background:#C0C0C0">       
                                 <div class="form-group col-sm-12">
                                      <label for="exampleInputPassword1">Total Damage Value:</label>
                                      {{!--{{validated-input type="text" model=this valuePath='totaldamagevalue' placeholder="Enter your first name" disabled=isInvalid}}--}}
@@ -101,7 +101,7 @@
                             </div>
                             </div>
                                 <label class="col-sm-12" style="color:red">Examinar Details :</label>
-                                    <div class="form-group col-sm-12" style="width:650px;border: solid;margin-left:20px;margin-right:40px;background:gray">
+                                    <div class="form-group col-sm-12" style="width:650px;border: solid;margin-left:20px;margin-right:40px;background:#C0C0C0">
                                        <div class="form-group  col-sm-12">
                                         <label for="exampleInputPassword1"> Rejection Remark  :</label>
                                             <b/><textarea class="form-control" rows="3" maxlength="500" value={{remark}} valuePath="damagedetails" placeholder="Add remark of rejection of Claim" disabled></textarea>
@@ -211,7 +211,7 @@
                            </div>
 
                 </form>
-            </div>
+           <!-- </div>-->
         </div>
     </div>
 
