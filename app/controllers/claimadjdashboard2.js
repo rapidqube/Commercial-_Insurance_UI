@@ -97,6 +97,7 @@ export default Ember.Controller.extend(Validations, {
             this.transitionToRoute('claimadjdashboard');
         },
 
+        //function for agree button to approve claim
         agreeclaimadjuster: function() {
 
             var myclaimno = this.get('claimno');
@@ -231,6 +232,7 @@ export default Ember.Controller.extend(Validations, {
 
 
         },
+        //to add rejection remark
         addremark:function(){
             var myclaimno=this.get('claimno');
             console.log('claimno:'+myclaimno);

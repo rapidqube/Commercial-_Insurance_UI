@@ -53,7 +53,7 @@
 <br>
 <div class="middle-container">
     <div class="notification-container">
-    <h2 > <b class="notification-title">Notifications</b>&nbsp;     Claim Number:{{claimno}} </h2>
+    <h2 > <b class="notification-title">Notifications</b>&nbsp; &nbsp;    Claim Number:&nbsp;{{claimno}} </h2>
        <div class="notification-heading">
             
     </div>
@@ -68,7 +68,7 @@
                 <form role="form">
                     {{#if isshowclaimform}}
                         <label class="col-sm-12" style="color:red"><b>Insurer Details :</b></label>
-                        <div class="form-group col-sm-12" style="width:650px;border: solid;margin-left:20px;margin-right:40px">       
+                        <div class="form-group col-sm-12" style="width:650px;border: solid;margin-left:20px;margin-right:40px;background:gray">       
                             <div class="form-group  col-sm-12">
                                 <label for="exampleInputEmail1">Title :</label>
                                    {{!-- {{validated-input type="text" model=this valuePath='title' placeholder="Enter Title" }}--}}
@@ -85,7 +85,7 @@
                             
                             </div>
                         </div>  
-                            <div class="form-group col-sm-12" style="width:650px;border: solid;margin-left:20px;margin-right:40px">       
+                            <div class="form-group col-sm-12" style="width:650px;border: solid;margin-left:20px;margin-right:40px;background:gray">       
                                 <div class="form-group col-sm-12">
                                      <label for="exampleInputPassword1">Total Damage Value:</label>
                                      {{!--{{validated-input type="text" model=this valuePath='totaldamagevalue' placeholder="Enter your first name" disabled=isInvalid}}--}}
@@ -101,7 +101,7 @@
                             </div>
                             </div>
                                 <label class="col-sm-12" style="color:red">Examinar Details :</label>
-                                    <div class="form-group col-sm-12" style="width:650px;border: solid;margin-left:20px;margin-right:40px">
+                                    <div class="form-group col-sm-12" style="width:650px;border: solid;margin-left:20px;margin-right:40px;background:gray">
                                        <div class="form-group  col-sm-12">
                                         <label for="exampleInputPassword1"> Rejection Remark  :</label>
                                             <b/><textarea class="form-control" rows="3" maxlength="500" value={{remark}} valuePath="damagedetails" placeholder="Add remark of rejection of Claim" disabled></textarea>

@@ -28,6 +28,7 @@ var Validations = buildValidations({
 
 export default Ember.Controller.extend(Validations,{
     actions:{
+        //to submit damage-value and claim-value 
         submit:function(){
            
             var myclaimno=this.get('claimno');
@@ -84,9 +85,11 @@ export default Ember.Controller.extend(Validations,{
             });
 
         },
+        //for pop up button
         afterexamined:function(){
             this.transitionToRoute('examinerdashbord');
         },
+        //to add rejection remark
         addremark:function(){
             var myclaimno=this.get('claimno');
             console.log('claimno:'+myclaimno);
@@ -109,7 +112,7 @@ export default Ember.Controller.extend(Validations,{
             console.log('token frm :::',token);
             var usertype;
             return $.ajax({
-                url:'http://192.168.0.20:8082/rejectClaim',
+                url: CONFIG.GOURL+'/rejectClaim',
                 type: 'POST',
                 
                 headers:{
