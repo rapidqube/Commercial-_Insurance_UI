@@ -3,10 +3,10 @@ import Ember from 'ember';
 export default Ember.Route.extend({
     model(){
           this.controllerFor('pubadjdashboard2').set('isshowclaimform',true);
-        this.controllerFor('examinerdashbord2').set('isShowingModals',false);
-         this.controllerFor('examinerdashbord2').set('isShowingModal',false);
+        this.controllerFor('pubadjdashboard2').set('isShowingModals',false);
+         this.controllerFor('pubadjdashboard2').set('isShowingModal',false);
          
-                  this.controllerFor('examinerdashbord2').set('isShowingModal',false);
+        this.controllerFor('pubadjdashboard2').set('isShowingModal',false);
 
         var claimno =this.controllerFor('pubadjdashboard').get('claimno');
         console.log("claimno :"+claimno);
