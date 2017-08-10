@@ -139,6 +139,32 @@ export default Ember.Route.extend({
         var Shortest =localStorage.Shortest  ;
         this.controllerFor('insurerdashboard2').set('Shortest', Shortest);
 
+        
+         var insurertoken = this.controllerFor('application').get('insurertoken');
+        console.log('message :' +sessionStorage.getItem('insurertoken'));
+        this.controllerFor('insurerdashboard2').set('insurertoken', insurertoken);
+         $.ajax({
+            url: "",
+            type: 'GET',
+            accepts: 'application/json',
+            headers:{
+               'x-access-token':insurertoken,
+             } ,
+             success: function(data) {
+                console.log(JSON.stringify(data));
+
+              
+              
+                return data;
+                    
+            },
+            error: function(err) {
+                console.log(data);
+                console.log(err);
+                console.log('DEBUG: GET Enquiries Failed');
+            }
+        });
+
 
    }
 });

@@ -13,6 +13,6 @@ export default Ember.Route.extend({
         this.controllerFor('register').set('lname',null);
         this.controllerFor('register').set('email',null);
         this.controllerFor('register').set('phoneno',null);
-        this.controllerFor('register').set('email',null);
+        
     }
 });

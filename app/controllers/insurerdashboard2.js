@@ -111,7 +111,7 @@ showotherformdetails:false,
             console.log('claimno:'+myclaimno);
 
             var claimno=JSON.stringify(myclaimno)
-            console.log("cl:::"+claimno);
+            console.log("cl :::"+claimno);
             let{
                 totaldamagevalue,
                 totalclaimvalue
@@ -195,7 +195,7 @@ showotherformdetails:false,
              
               $.ajax({
                     
-                    url: 'http://192.168.0.20:8082/UploadDocs',
+                    url: CONFIG.GOURL+'/UploadDocs',
                     type: 'POST',
                     headers:{
                     'x-access-token':token,
