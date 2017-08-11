@@ -19,14 +19,14 @@ var Validations = buildValidations({
             type: 'name'
         })
     ],
-totaldamagevalue:[
+    totaldamagevalue: [
         validator('presence', true),
         validator('format', {
             regex: /^[0-9]{4,10}$/,
             message: 'This field must be a valid damage value'
         })
     ],
-totalclaimvalue:[
+    totalclaimvalue: [
         validator('presence', true),
         validator('format', {
             regex: /^[0-9]{4,10}$/,
@@ -35,232 +35,239 @@ totalclaimvalue:[
     ],
 });
 
-export default Ember.Controller.extend(Validations,{
-//claimno:null,
-isShowingModal:false,
-showformdetails:true,
-showotherformdetails:false,
- testlist: ['Fundamental', 'JAVA', 'Language', ],
-    actions:{
-        notifyclaim: function(){
-            let{
+export default Ember.Controller.extend(Validations, {
+    //claimno:null,
+    isShowingModal: false,
+    showformdetails: true,
+    showotherformdetails: false,
+    testlist: ['Fundamental', 'JAVA', 'Language', ],
+    actions: {
+        notifyclaim: function() {
+            let {
                 title,
                 damagecontent
-                }=this.getProperties('title','damagecontent');
-           
-            var datastring={
-                    "title":title,
-                    "damagedetails": damagecontent
-           
+            } = this.getProperties('title', 'damagecontent');
+
+            var datastring = {
+                "title": title,
+                "damagedetails": damagecontent
+
             };
             console.log(JSON.stringify(datastring));
-            var mycontroller =this;
+            var mycontroller = this;
             var message;
-            var token =sessionStorage.getItem('insurertoken');
-            console.log('token',token);
+            var token = sessionStorage.getItem('insurertoken');
+            console.log('token', token);
             var usertype;
             return $.ajax({
-                url:  CONFIG.GOURL +'/notifyClaim',
+                url: CONFIG.GOURL + '/notifyClaim',
                 type: 'POST',
                 contentType: 'application/json',
-                headers:{
-                    'x-access-token':token
+                headers: {
+                    'x-access-token': token
                 },
-                
-                data:JSON.stringify(datastring),
+
+                data: JSON.stringify(datastring),
                 success: function(response) {
                     console.log(JSON.stringify(response));
-                   message = response.message;
-                   console.log("message"+message);
-                   if(message === 'claim notified  Sucessfully !'){
-                       console.log("in if loop");
-                        mycontroller.toggleProperty('isShowingModal');  
+                    message = response.message;
+                    console.log("message" + message);
+                    if (message === 'claim notified  Sucessfully !') {
+                        console.log("in if loop");
+                        mycontroller.toggleProperty('isShowingModal');
                         //mycontroller.set("showotherformdetails",true);
-                   }
-                   
-                    
-                },      
-                error: function(response) {
-                   console.log('DEBUG: GET Enquiries Failed');
-                   console.log(JSON.stringify(response));
-                   var errmsg=response.responseJSON.message;
-                   console.log("Error Message: "+ errmsg);      
-                }   
-            });
-            
+                    }
 
-        
+
+                },
+                error: function(response) {
+                    console.log('DEBUG: GET Enquiries Failed');
+                    console.log(JSON.stringify(response));
+                    var errmsg = response.responseJSON.message;
+                    console.log("Error Message: " + errmsg);
+                }
+            });
+
+
+
         },
-        afternotify:function(arg){
-            var showclaim=arg;
-            console.log("agr :"+showclaim);
-            if(showclaim === "claimgetnotified"){
-                this.set('showformdetails',false);
+        afternotify: function(arg) {
+            var showclaim = arg;
+            console.log("agr :" + showclaim);
+            if (showclaim === "claimgetnotified") {
+                this.set('showformdetails', false);
                 //this.set('showotherformdetails',true);
             }
-          // this.set('isShowingModal',false);
-          this.transitionToRoute('insurerdashboard');
-     
+            // this.set('isShowingModal',false);
+            this.transitionToRoute('insurerdashboard');
+
         },
 
-        submitdetails:function(){
-           /* var totaldamagevalue =this.get('totaldamagevalue');
-            var totalclaimvalue=this.get('totalclaimvalue');
-            console.log("totalclaimvalue :"+totalclaimvalue);*/
-            var myclaimno=this.get('claimno');
-            console.log('claimno:'+myclaimno);
+        submitdetails: function() {
+            /* var totaldamagevalue =this.get('totaldamagevalue');
+             var totalclaimvalue=this.get('totalclaimvalue');
+             console.log("totalclaimvalue :"+totalclaimvalue);*/
+            var selectedtest = this.get('selectedtest')
+            console.log("selectedtest :", selectedtest);
+            var pubadjlist = this.get('pubadjlist');
+            console.log('pubadjlist controller :', JSON.stringify(pubadjlist));
+            for (var i = 0; i < pubadjlist.length; i++) {
 
-            var claimno=JSON.stringify(myclaimno)
-            console.log("cl :::"+claimno);
-            let{
+            }
+            var myclaimno = this.get('claimno');
+            console.log('claimno:' + myclaimno);
+
+            var claimno = JSON.stringify(myclaimno)
+            console.log("cl :::" + claimno);
+            let {
                 totaldamagevalue,
                 totalclaimvalue
-                }=this.getProperties('totaldamagevalue','totalclaimvalue');
-           
-            var datastring={
-                    "claimno": claimno,
-            "totaldamagevalue": totaldamagevalue,
-           "totalclaimvalue":totalclaimvalue,
-           "publicadjusterid":"5969c4348ffe617eb217b5c7"
-           
+            } = this.getProperties('totaldamagevalue', 'totalclaimvalue');
+
+            var datastring = {
+                "claimno": claimno,
+                "totaldamagevalue": totaldamagevalue,
+                "totalclaimvalue": totalclaimvalue,
+                "publicadjusterid": "5969c4348ffe617eb217b5c7"
+
             };
             console.log(JSON.stringify(datastring));
-            var mycontroller =this;
+            var mycontroller = this;
             var message;
-            var token =sessionStorage.getItem('insurertoken');
-            console.log('token frm :::',token);
+            var token = sessionStorage.getItem('insurertoken');
+            console.log('token frm :::', token);
             var usertype;
             return $.ajax({
-                url: CONFIG.GOURL+'/createClaim',
+                url: CONFIG.GOURL + '/createClaim',
                 type: 'POST',
-                
-                headers:{
-                    'x-access-token':token
+
+                headers: {
+                    'x-access-token': token
                 },
-                contentType: 'application/json', 
-                data:JSON.stringify(datastring),
+                contentType: 'application/json',
+                data: JSON.stringify(datastring),
                 success: function(response) {
                     console.log(JSON.stringify(response));
-                   message = response.message;
-                   console.log("message"+message);
-                   if(message === 'claim value updated Sucessfully !'){
-                       console.log("in if loop");
-                        mycontroller.toggleProperty('isShowingModals');  
+                    message = response.message;
+                    console.log("message" + message);
+                    if (message === 'claim value updated Sucessfully !') {
+                        console.log("in if loop");
+                        mycontroller.toggleProperty('isShowingModals');
                         //mycontroller.set("showotherformdetails",true);
-                   }
-                   
-                  
-                   
-                    
-                },      
+                    }
+
+
+
+
+                },
                 error: function(response) {
-                   console.log('DEBUG: GET Enquiries Failed');
-                   console.log(JSON.stringify(response));
-                   var errmsg=response.responseJSON.message;
-                   console.log("Error Message: "+ errmsg);      
-                }   
+                    console.log('DEBUG: GET Enquiries Failed');
+                    console.log(JSON.stringify(response));
+                    var errmsg = response.responseJSON.message;
+                    console.log("Error Message: " + errmsg);
+                }
             });
 
         },
-        upload:function(file){
-           console.log(" Test", file);
-           //var myfile =file.get('#upload_file');
-           //console.log("myfile",myfile); 
-           var reqid =file.get('name');
-           console.log("FileName: ", reqid);
-           var myurl =file.get('id');
-           console.log("myurl: ", myurl);
-           var files = file[1];
-           console.log("files",files);
-          //s event.preventDefault();
-           var formData = new FormData($(this)[0]);
-           
-        var fieldName =reqid ;
-       // var formseralize = file.serialize();
-       
-        formData.append(fieldName, file[0]);
-        console.log(formData);
-        var token =sessionStorage.getItem('insurertoken');
-            console.log('token frm :::',token);
-         
-          /* file.upload("http://192.168.0.20:8082"+ "/UploadDocs"+token ).then(function(response) {
+        upload: function(file) {
+            console.log(" Test", file);
+            //var myfile =file.get('#upload_file');
+            //console.log("myfile",myfile); 
+            var reqid = file.get('name');
+            console.log("FileName: ", reqid);
+            var myurl = file.get('id');
+            console.log("myurl: ", myurl);
+            var files = file[1];
+            console.log("files", files);
+            //s event.preventDefault();
+            var formData = new FormData($(this)[0]);
+
+            var fieldName = reqid;
+            // var formseralize = file.serialize();
+
+            formData.append(fieldName, file[0]);
+            console.log(formData);
+            var token = sessionStorage.getItem('insurertoken');
+            console.log('token frm :::', token);
+
+            /* file.upload("http://192.168.0.20:8082"+ "/UploadDocs"+token ).then(function(response) {
          console.log(JSON.stringify(response));
               
            },
            function() {
               // image.rollback();
            });*/
-              
 
-             
-              $.ajax({
-                    
-                    url: CONFIG.GOURL+'/UploadDocs',
-                    type: 'POST',
-                    headers:{
-                    'x-access-token':token,
-                   // 'Content-Type': multipart/form-data
-                },
-                  processData: false,
-                    contentType:false,
-                    enctype: 'multipart/form-data',
-                    data: formData,
-                    
-                    success: function(response) {
-                        console.log(JSON.stringify(response));
-                         console.log(JSON.stringify(response.files));
-                    },
-                    error: function(err) {
-                        console.error(err);
-                    }
-                    });
-        
-           /*var token =sessionStorage.getItem('insurertoken');
-            console.log('token frm :::',token);
-            var test =event ;
-            console.log(test);
-            var myfile= this.get('photo');
-            console.log('myfile'+myfile);
-            console.log("event :"+event.target);
-            var  inputFiles = event.target.files;
-            console.log("inputFiles :"+JSON.stringify(inputFiles));
-             var imgFile = inputFiles;
-             var Data = new FormData();
-             Data.append('photo', inputFiles[0]);
-             //formData.append('photo', inputFiles[0], 'a1.jpg');
 
-             //console.log(JSON.stringify(formData));
-                    $.ajax({
-                    
-                    url: 'http://192.168.0.20:8082/UploadDocs',
-                    type: 'POST',
-                     headers:{
-                    'x-access-token':token
+
+            $.ajax({
+
+                url: CONFIG.GOURL + '/UploadDocs',
+                type: 'POST',
+                headers: {
+                    'x-access-token': token,
+                    // 'Content-Type': multipart/form-data
                 },
-                    contentType: 'multipart/form-data',
-                    data: Data,
-                    
-                    success: function(response) {
-                        console.log(JSON.stringify(response));
-                    },
-                    error: function(err) {
-                        console.error(err);
-                    }
-                    });*/
-        },
-  okbutton:function(){
-         this.set('isShowingrejection', false);
-    }
-       
-    /*    uploadImage:function(file){
-                console.log(file)
-                let filename = file.get('name');
-                file.read().then(function (url) {
-                console.log(filename)
-                console.log(url)
+                processData: false,
+                contentType: false,
+                enctype: 'multipart/form-data',
+                data: formData,
+
+                success: function(response) {
+                    console.log(JSON.stringify(response));
+                    console.log(JSON.stringify(response.files));
+                },
+                error: function(err) {
+                    console.error(err);
                 }
-        */
-                        
-              
+            });
+
+            /*var token =sessionStorage.getItem('insurertoken');
+             console.log('token frm :::',token);
+             var test =event ;
+             console.log(test);
+             var myfile= this.get('photo');
+             console.log('myfile'+myfile);
+             console.log("event :"+event.target);
+             var  inputFiles = event.target.files;
+             console.log("inputFiles :"+JSON.stringify(inputFiles));
+              var imgFile = inputFiles;
+              var Data = new FormData();
+              Data.append('photo', inputFiles[0]);
+              //formData.append('photo', inputFiles[0], 'a1.jpg');
+
+              //console.log(JSON.stringify(formData));
+                     $.ajax({
+                     
+                     url: 'http://192.168.0.20:8082/UploadDocs',
+                     type: 'POST',
+                      headers:{
+                     'x-access-token':token
+                 },
+                     contentType: 'multipart/form-data',
+                     data: Data,
+                     
+                     success: function(response) {
+                         console.log(JSON.stringify(response));
+                     },
+                     error: function(err) {
+                         console.error(err);
+                     }
+                     });*/
+        },
+        okbutton: function() {
+            this.set('isShowingrejection', false);
+        }
+
+        /*    uploadImage:function(file){
+                    console.log(file)
+                    let filename = file.get('name');
+                    file.read().then(function (url) {
+                    console.log(filename)
+                    console.log(url)
+                    }
+            */
+
+
     }
 });

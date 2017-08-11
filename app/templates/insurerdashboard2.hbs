@@ -76,7 +76,7 @@
                         </div>
                         <div class="form-group col-sm-12">
                             <label for="exampleInputEmail1">Damage Details :</label>
-                        {{textarea class="form-control" rows="4" maxlength="500" value=damagecontent valuePath="damagedetails" placeholder="Enter damage details decription" }}
+                        {{textarea class="form-control" rows="4" maxlength="500" value=damagecontent  placeholder="Enter damage details decription" }}
                         </div>
                         <div class="form-group col-sm-12">
                             <div class="col-sm-6">
@@ -94,7 +94,7 @@
                         <br/> <input type="text" value={{totaldamagevalue}} placeholder="Enter Damage value" size="50" disabled >
                         </div>
                             <div class="form-group col-sm-12">
-                            <label for="exampleInputPassword1">Total Claim :</label>
+                            <label for="exampleInputPassword1">Total Claim Value:</label>
                             {{!--    {{validated-input type="text" model=this valuePath='totalclaim' placeholder="Enter total claim value" disabled=disabled}}--}}
                                 <br/> <input type="text"  value={{totalclaimvalue}} placeholder="Enter Claim value" size="50" disabled>
                         </div>
@@ -196,8 +196,9 @@
                             </div>
                             <div class="form-group col-sm-12">
                                 <label for="exampleInputPassword1">Select Public Adjuster :</label>
-                             {{select-component dropdowntype="test" listitem=testlist selecteditemlist=selectedtest}}
+                             {{select-component dropdowntype="test" listitem=fname selecteditemlist=selectedtest}}
                             </div>
+                            {{selectedtest}}
                             <div class="form-group col-sm-12">
                                 <button type="submit" class="btn agree-btn-default"{{action 'submitdetails'}}>Submit Details</button>
                             </div>
