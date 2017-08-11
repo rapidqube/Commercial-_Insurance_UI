@@ -1,5 +1,6 @@
 
 import Ember from 'ember';
+import CONFIG from 'cm-insurance/config/environment';
 export default Ember.Route.extend({
    model(){
 
@@ -144,7 +145,7 @@ export default Ember.Route.extend({
         console.log('message :' +sessionStorage.getItem('insurertoken'));
         this.controllerFor('insurerdashboard2').set('insurertoken', insurertoken);
          $.ajax({
-            url: "",
+            url: CONFIG.GOURL +'/publicadjusterlist',
             type: 'GET',
             accepts: 'application/json',
             headers:{
@@ -152,7 +153,8 @@ export default Ember.Route.extend({
              } ,
              success: function(data) {
                 console.log(JSON.stringify(data));
-
+                var pubadjlist = data.message;
+                console.log(pubadjlist[0]._id);
               
               
                 return data;
