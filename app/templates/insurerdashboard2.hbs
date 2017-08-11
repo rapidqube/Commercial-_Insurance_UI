@@ -54,7 +54,7 @@
 <br>
 <div class="insurer-middle-container">
     <div class="notification-container">
-    <h2 > <b class="notification-title">Notifications</b>&nbsp;     Claim Number:{{claimno}}  </h2>
+   <h2 class="notification-title">Notifications &nbsp;     Claim Number:{{claimno}}  </h2>
             
     </div>
     <br>
@@ -196,7 +196,7 @@
                             </div>
                             <div class="form-group col-sm-12">
                                 <label for="exampleInputPassword1">Select Public Adjuster :</label>
-                             {{select-component dropdowntype="test" listitem=fname selecteditemlist=selectedtest}}
+                             {{select-component dropdowntype="test" listitem=fullname  selecteditemlist=selectedname}}
                             </div>
                             {{selectedtest}}
                             <div class="form-group col-sm-12">
@@ -212,11 +212,11 @@
                         </div> 
                         <div class="form-group  col-sm-12">
                             <label for="exampleInputPassword1">Assessed Damage Value :</label>
-                            <br/> <input type="text"  value={{assesseddamagevalue}} placeholder="Enter assed damage value"size="30" disabled >
+                            <br/> <input type="text"  value={{assesseddamagevalue}} placeholder="Enter assed damage value"size="40" disabled >
                         </div>
                         <div class="form-group  col-sm-12">
                             <label for="exampleInputPassword1">Assessed Claim Value :</label>
-                           <br/> <input type="text" value={{assessedclaimvalue}} placeholder="Enter assed Claim value"size="30" disabled >
+                           <br/> <input type="text" value={{assessedclaimvalue}} placeholder="Enter assed Claim value"size="40" disabled >
                         </div>
                             
                     </div>   
@@ -310,9 +310,9 @@
     <td style="padding:10px">1</td>
     <td  style="padding:10px">FIR</td>
     <!--<td><input multiple="true" id="photo" onchange={{action "upload"}} accept="image/png,image/jpeg,application/pdf" type="file"/>
-</td>-->
-    <td  style="padding:10px">{{#pl-uploader for="upload_file" runtimes="html5 flash silverlight" onfileadd="upload" as |queue|}}
-          <button type="file" id="upload_file" {{action 'upload'}}>upload</button> 
+        </td>-->
+    <td  style="padding:10px">{{#pl-uploader  for="upload_file" runtimes="html5 flash silverlight" onfileadd="uploadImage" as |queue|}}
+          <a id="upload_file">Upload File</a>
          {{/pl-uploader}}
 
     {{!-- {{#pl-uploader extensions="jpg jpeg png gif" for="upload-image" onfileadd="uploadImage" as |queue features|}}
@@ -326,8 +326,8 @@
   <tr>
     <td  style="padding:10px">2</td>
     <td style="padding:10px">PHOTO</td>
-    <td style="padding:10px">{{#pl-uploader for="upload_file" runtimes="html5 flash silverlight" onfileadd="upload" as |queue|}}
-          <button type="file" id="upload_file" {{action 'upload'}}>upload</button> 
+    <td style="padding:10px">{{#pl-uploader for="upload_file_doc" runtimes="html5 flash silverlight" onfileadd="uploadFIR" as |queue|}}
+          <a id="upload_file_doc">Upload File</a>
          {{/pl-uploader}}
 
       </td>
@@ -336,8 +336,8 @@
   <tr>
     <td style="padding:10px">3</td>
     <td style="padding:10px">Cerificates</td>
-    <td style="padding:10px">{{#pl-uploader for="upload_file" runtimes="html5 flash silverlight" onfileadd="upload" as |queue|}}
-          <button type="file" id="upload_file" {{action 'upload'}}>upload</button> 
+    <td style="padding:10px">{{#pl-uploader for="upload_file_mydoc" runtimes="html5 flash silverlight" onfileadd="uploadDoc" as |queue|}}
+         <a id="upload_file_mydoc">Upload File</a>
          {{/pl-uploader}}
 
   </td>
@@ -346,19 +346,12 @@
   
 </table>
 <br/>
-<!--<div class="row">
-    <div class="col-sm-6"></div>
-<div class="col-sm-6">
-
-<button type="submit" form="form1" value="Submit">Submit</button>
 </div>
-</div>-->
-
-    </div>
 </div>
 </div>
 </div>
 <br>
+
 <div class="insurer-end-container" width="100px">
      <div class="row">
 <p style="text-align:left"><b>Settlement Time </b>  </p>

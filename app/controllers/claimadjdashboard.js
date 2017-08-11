@@ -36,7 +36,7 @@ claimno:null,
             },
            
     
-        claimaction:function(claimno,status,title,damagedetails,totaldamagevalue,totalclaimvalue,remark,assesseddamagevalue,assessedclaimvalue,negotiationlist,claimnotifieddate,claimsubmitteddate,claimexamineddate,claimvalidateddate,claimapproveddate,claimsettleddate,approvedclaim){
+        claimaction:function(claimno,status,title,damagedetails,totaldamagevalue,totalclaimvalue,remark,assesseddamagevalue,assessedclaimvalue,negotiationlist,claimnotifieddate,claimsubmitteddate,claimexamineddate,claimvalidateddate,claimapproveddate,claimsettleddate,approvedclaim,publicadjusterid){
                 var claimno =claimno ;
                 console.log("claimno ::::",claimno);
                 this.set("claimno",claimno);
@@ -100,6 +100,9 @@ claimno:null,
                  var settledate =claimsettleddate.substr(0,10); 
                  console.log(settledate);
 
+                 var publicadjusterid =publicadjusterid;
+                  console.log("publicadjusterid :::",publicadjusterid);
+
                /* var negotiation =[];
                 var evenarray =[];
                 var oddarray =[];
@@ -115,6 +118,7 @@ claimno:null,
                 this.set("validatedate",validatedate);
                 this.set("approvrdate",approvrdate);
                 this.set("settledate",settledate);
+                this.set("publicadjusterid",publicadjusterid);
          
 
               }else{
@@ -141,6 +145,7 @@ claimno:null,
                 this.set("validatedate",validatedate);
                 this.set("approvrdate",approvrdate);
                 this.set("settledate",settledate);
+                this.set("publicadjusterid",publicadjusterid);
                
               }
                 this.transitionToRoute('claimadjdashboard2');

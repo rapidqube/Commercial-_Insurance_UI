@@ -40,7 +40,7 @@ export default Ember.Controller.extend(Validations, {
     isShowingModal: false,
     showformdetails: true,
     showotherformdetails: false,
-    testlist: ['Fundamental', 'JAVA', 'Language', ],
+publicadjusterName:null,
     actions: {
         notifyclaim: function() {
             let {
@@ -96,24 +96,34 @@ export default Ember.Controller.extend(Validations, {
             console.log("agr :" + showclaim);
             if (showclaim === "claimgetnotified") {
                 this.set('showformdetails', false);
-                //this.set('showotherformdetails',true);
+                
             }
-            // this.set('isShowingModal',false);
+            
             this.transitionToRoute('insurerdashboard');
 
         },
 
         submitdetails: function() {
-            /* var totaldamagevalue =this.get('totaldamagevalue');
-             var totalclaimvalue=this.get('totalclaimvalue');
-             console.log("totalclaimvalue :"+totalclaimvalue);*/
-            var selectedtest = this.get('selectedtest')
-            console.log("selectedtest :", selectedtest);
+           
+             
+             //following code for setting multiple public adjuster
+            var selectedname = this.get('selectedname')
+            console.log("selectedname :", selectedname);
+            //this.set("publicadjusterName",selectedname);
+            localStorage.selectedname = selectedname;
+            var publicadjusterid ;
             var pubadjlist = this.get('pubadjlist');
             console.log('pubadjlist controller :', JSON.stringify(pubadjlist));
             for (var i = 0; i < pubadjlist.length; i++) {
+                if(selectedname === pubadjlist[i].firstname ){
+                    publicadjusterid = pubadjlist[i]._id;
+                    console.log("publicadjusterid frm controller :",publicadjusterid);
+                }
 
             }
+            
+            //ajax calling to submit claim value
+
             var myclaimno = this.get('claimno');
             console.log('claimno:' + myclaimno);
 
@@ -128,7 +138,7 @@ export default Ember.Controller.extend(Validations, {
                 "claimno": claimno,
                 "totaldamagevalue": totaldamagevalue,
                 "totalclaimvalue": totalclaimvalue,
-                "publicadjusterid": "5969c4348ffe617eb217b5c7"
+                "publicadjusterid": publicadjusterid
 
             };
             console.log(JSON.stringify(datastring));
@@ -169,7 +179,7 @@ export default Ember.Controller.extend(Validations, {
             });
 
         },
-        upload: function(file) {
+       /* upload: function(file) {
             console.log(" Test", file);
             //var myfile =file.get('#upload_file');
             //console.log("myfile",myfile); 
@@ -199,7 +209,7 @@ export default Ember.Controller.extend(Validations, {
            });*/
 
 
-
+/*
             $.ajax({
 
                 url: CONFIG.GOURL + '/UploadDocs',
@@ -254,7 +264,7 @@ export default Ember.Controller.extend(Validations, {
                          console.error(err);
                      }
                      });*/
-        },
+   /* },*/
         okbutton: function() {
             this.set('isShowingrejection', false);
         }

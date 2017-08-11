@@ -49,7 +49,7 @@
 <!--dashboard -->
 <div class="dash1-middle-container">
     <div class="notification-container">
-    <h2 class="notification-title"> <b>Notifications</b></h2>
+    <h2 class="notification-title"> Notifications</h2>
        
         <div class="notification-heading">
     </div>
@@ -62,7 +62,7 @@
          <div class="col-sm-12" style="text-align:center">
           <ul style="list-style-type:none">
             {{#each totalnoList as |item|}}
-            <div id="rectangle"{{action 'claimaction' item.claimno   item.status item.title  item.damagedetails  item.totaldamagevalue item.totalclaimvalue item.remark item.assesseddamagevalue item.assessedclaimvalue  item.negotiationlist  item.claimnotifieddate item.claimsubmitteddate item.claimexamineddate item.claimvalidateddate item.claimapproveddate item.claimsettleddate item.approvedclaim}}>
+            <div id="rectangle"{{action 'claimaction' item.claimno   item.status item.title  item.damagedetails  item.totaldamagevalue item.totalclaimvalue item.remark item.assesseddamagevalue item.assessedclaimvalue  item.negotiationlist  item.claimnotifieddate item.claimsubmitteddate item.claimexamineddate item.claimvalidateddate item.claimapproveddate item.claimsettleddate item.approvedclaim item.publicadjusterid}}>
                 <p><li><font color="white"><span style="text-align:left"><b>Claim No.</b> : {{item.claimno}}</span></font> &nbsp; &nbsp; &nbsp; </li>
                 <li><font color="white"> <span style="text-align:left"> <b>  Title </b>: {{item.title}} </span></font >&nbsp; &nbsp; &nbsp; </li>
                 <li><font color="red"> <span style="text-align:left">  <b> Status </b>: {{item.status}} </span></font ></li>

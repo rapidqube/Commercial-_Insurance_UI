@@ -103,6 +103,9 @@ export default Ember.Route.extend({
         this.controllerFor('examinerdashbord2').set('settledate',settledate);
        }
       
+    var selectedname= localStorage.selectedname ;
+    console.log(selectedname)
+     
       //to footer part  settele time
    /*    var Average =this.controllerFor('examinerdashbord').get('Average');
       console.log("Average next :"+JSON.parse(Average));

@@ -107,6 +107,12 @@ export default Ember.Route.extend({
         this.controllerFor('claimadjdashboard2').set('settledate',settledate);
        }
       
+       
+       var publicadjusterid = this.controllerFor('claimadjdashboard').get('publicadjusterid');
+       //var publicadjusterName = localStorage.selectedname;
+       console.log("publicadjusterid   1:",publicadjusterid);
+
+
       //to footer part  settele time
    /*   var Average =this.controllerFor('claimadjdashboard').get('Average');
       console.log("Average next :"+JSON.parse(Average));

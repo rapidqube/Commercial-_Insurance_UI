@@ -1,6 +1,64 @@
 import Ember from 'ember';
 import CONFIG from 'cm-insurance/config/environment';
 export default Ember.Route.extend({
+
+    actions: {
+    uploadImage: function (file) {
+        console.log("entering upload Image");
+
+         var insurertoken = this.controllerFor('application').get('insurertoken');
+        //console.log('message :' + sessionStorage.getItem('insurertoken'));
+        //this.controllerFor('insurerdashboard2').set('insurertoken', insurertoken);
+
+        console.log("token :" + insurertoken);
+     
+   
+      file.upload(CONFIG.GOURL + '/UploadDocs?token='+insurertoken).then(function (response) {
+    
+        console.log("saviing file...");
+        //return image.save();
+      }, function () {
+        //image.rollback();
+      });
+    },
+    uploadFIR:function (file) {
+        console.log("entering upload FIR 2");
+
+         var insurertoken = this.controllerFor('application').get('insurertoken');
+        //console.log('message :' + sessionStorage.getItem('insurertoken'));
+        //this.controllerFor('insurerdashboard2').set('insurertoken', insurertoken);
+
+        console.log("token :" + insurertoken);
+     
+   
+      file.upload(CONFIG.GOURL + '/UploadDocs?token='+insurertoken).then(function (response) {
+        console.log(JSON.stringify(response));
+        console.log("saviing file...");
+        //return image.save();
+      }, function () {
+        //image.rollback();
+      });
+    },
+    uploadDoc:function (file) {
+        console.log("entering upload FIR 3");
+
+         var insurertoken = this.controllerFor('application').get('insurertoken');
+        //console.log('message :' + sessionStorage.getItem('insurertoken'));
+        //this.controllerFor('insurerdashboard2').set('insurertoken', insurertoken);
+
+        console.log("token :" + insurertoken);
+     
+   
+      file.upload(CONFIG.GOURL + '/UploadDocs?token='+insurertoken).then(function (response) {
+        console.log(JSON.stringify(response));
+        console.log("saviing file...");
+        //return image.save();
+      }, function () {
+        //image.rollback();
+      });
+    },
+  },
+
     model() {
 
         this.controllerFor('insurerdashboard2').set('isShowingModals', false);
@@ -158,12 +216,18 @@ export default Ember.Route.extend({
                 console.log(pubadjlist[0]._id);
                 var fname = [];
                 var lname = [];
+                var fullname =[];
                 for (var i = 0; i < pubadjlist.length; i++) {
+
                     fname.push(pubadjlist[i].firstname);
-                    lname.push(pubadjlist[i].lastname)
+                    lname.push(pubadjlist[i].lastname);
+                   // fullname.push((pubadjlist[i].firstname).concat(pubadjlist[i].lastname));
+                      fullname.push(pubadjlist[i].firstname+' '+pubadjlist[i].lastname);
 
                 }
                 console.log(JSON.stringify(fname));
+                  console.log(JSON.stringify(fullname));
+                  mycontroller.controllerFor('insurerdashboard2').set("fullname", fullname);
                 mycontroller.controllerFor('insurerdashboard2').set("fname", fname);
                 mycontroller.controllerFor('insurerdashboard2').set("lname", lname);
 
@@ -182,4 +246,6 @@ export default Ember.Route.extend({
 
 
     }
+
+     
 });
