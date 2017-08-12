@@ -54,7 +54,7 @@
 <br>
 <div class="insurer-middle-container">
     <div class="notification-container">
-   <h2 class="notification-title">Notifications &nbsp;     Claim Number:{{claimno}}  </h2>
+   <h2 class="notification-title">Notifications <h3 style="color:black">  Claim Number:{{claimno}} </h3> </h2>
             
     </div>
     <br>
@@ -321,6 +321,10 @@
   </div>
 {{/pl-uploader}} --}}   
 </td>
+<td><a href="https://commercialinsurance1.herokuapp.com/documents?token=insurertoken"  download>
+ download
+</a>
+</td>
 
   </tr>
   <tr>
@@ -351,20 +355,20 @@
 </div>
 </div>
 <br>
-
+{{isShowingModalphoto}}
 <div class="insurer-end-container" width="100px">
      <div class="row">
 <p style="text-align:left"><b>Settlement Time </b>  </p>
     </div>
   <div class="row">
       <div class="progress">
-    <div class="progress-bar progress-bar-success" role="progressbar" style="width:30%">
+    <div class="progress-bar progress-bar-success" role="progressbar" style="width:25%">
      Average: {{Average}} Days
     </div>
-    <div class="progress-bar progress-bar-warning" role="progressbar" style="width:60%">
+    <div class="progress-bar progress-bar-warning" role="progressbar" style="width:55%">
     Longest: {{Longest}} Days
     </div>
-    <div class="progress-bar progress-bar-danger" role="progressbar" style="width:10%">
+    <div class="progress-bar progress-bar-danger" role="progressbar" style="width:15%">
      Shortest: {{Shortest}} Days
     </div>
   </div>
@@ -392,6 +396,16 @@
  {{/modal-dialog}}
 
 {{/if}}
+{{#if isShowingModalphoto}}
+{{#modal-dialog close="toggleModal" targetAttachment="center" translucentOverlay=true}}
+                              <h3> Document Uploaded Succesfully ..!!</h3>
+                            <div class="modal-header">
+                                    <button type="button" class="close" {{action "afternotify" }}>ok</button>
+                            </div>
+ {{/modal-dialog}}
+
+{{/if}}
+
 
 
 

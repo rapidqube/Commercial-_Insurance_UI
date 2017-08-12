@@ -1,45 +1,48 @@
 import Ember from 'ember';
 import CONFIG from 'cm-insurance/config/environment';
 export default Ember.Route.extend({
-
+isShowingModalphoto:false,
     actions: {
-    uploadImage: function (file) {
+
+        
+  /*  uploadImage: function (file) {
+          var mycontroller = this;
         console.log("entering upload Image");
 
          var insurertoken = this.controllerFor('application').get('insurertoken');
-        //console.log('message :' + sessionStorage.getItem('insurertoken'));
-        //this.controllerFor('insurerdashboard2').set('insurertoken', insurertoken);
-
+        
         console.log("token :" + insurertoken);
      
    
       file.upload(CONFIG.GOURL + '/UploadDocs?token='+insurertoken).then(function (response) {
-    
+        
         console.log("saviing file...");
-        //return image.save();
+        mycontroller.toggleProperty('isShowingModalphoto');
+        
       }, function () {
-        //image.rollback();
+        
       });
     },
     uploadFIR:function (file) {
+        var mycontroller = this;
         console.log("entering upload FIR 2");
 
          var insurertoken = this.controllerFor('application').get('insurertoken');
-        //console.log('message :' + sessionStorage.getItem('insurertoken'));
-        //this.controllerFor('insurerdashboard2').set('insurertoken', insurertoken);
 
         console.log("token :" + insurertoken);
      
    
       file.upload(CONFIG.GOURL + '/UploadDocs?token='+insurertoken).then(function (response) {
         console.log(JSON.stringify(response));
+          mycontroller.toggleProperty('isShowingModalphoto');
         console.log("saviing file...");
         //return image.save();
       }, function () {
         //image.rollback();
       });
-    },
+    },*/
     uploadDoc:function (file) {
+        // var mycontroller = this;
         console.log("entering upload FIR 3");
 
          var insurertoken = this.controllerFor('application').get('insurertoken');
@@ -51,15 +54,23 @@ export default Ember.Route.extend({
    
       file.upload(CONFIG.GOURL + '/UploadDocs?token='+insurertoken).then(function (response) {
         console.log(JSON.stringify(response));
+        alert("Document uploaded sucessfully!!!!");
+         // this.toggleProperty('isShowingModalphoto');
+         // this.set("isShowingModalphoto",true);
         console.log("saviing file...");
         //return image.save();
+        
       }, function () {
         //image.rollback();
+         this.toggleProperty('isShowingModalphoto');
       });
+      this.toggleProperty('isShowingModalphoto');
     },
   },
 
     model() {
+
+      // alert("Before notifying the Claim Submit your Documents");
 
         this.controllerFor('insurerdashboard2').set('isShowingModals', false);
         this.controllerFor('insurerdashboard2').set('isShowingModal', false);
