@@ -115,7 +115,7 @@ publicadjusterName:null,
             var pubadjlist = this.get('pubadjlist');
             console.log('pubadjlist controller :', JSON.stringify(pubadjlist));
             for (var i = 0; i < pubadjlist.length; i++) {
-                if(selectedname === pubadjlist[i].firstname ){
+                if (selectedname === (pubadjlist[i].firstname + " " + pubadjlist[i].lastname)) {
                     publicadjusterid = pubadjlist[i]._id;
                     console.log("publicadjusterid frm controller :",publicadjusterid);
                 }
