@@ -36,7 +36,7 @@ claimno:null,
             },
            
     
-        claimaction:function(claimno,status,title,damagedetails,totaldamagevalue,totalclaimvalue,remark,assesseddamagevalue,assessedclaimvalue,negotiationlist,claimnotifieddate,claimsubmitteddate,claimexamineddate,claimvalidateddate,claimapproveddate,claimsettleddate,approvedclaim,publicadjusterid){
+        claimaction:function(claimno,status,title,damagedetails,totaldamagevalue,totalclaimvalue,remark,assesseddamagevalue,assessedclaimvalue,negotiationlist,claimnotifieddate,claimsubmitteddate,claimexamineddate,claimvalidateddate,claimapproveddate,claimsettleddate,approvedclaim,publicadjusterid,userid){
                 var claimno =claimno ;
                 console.log("claimno ::::",claimno);
                 this.set("claimno",claimno);
@@ -148,6 +148,9 @@ claimno:null,
                 this.set("publicadjusterid",publicadjusterid);
                
               }
+              var userid = userid;
+              console.log("userid ::::",userid);
+              this.set("insuredUserID",userid);
                 this.transitionToRoute('claimadjdashboard2');
         }
 }

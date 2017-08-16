@@ -141,5 +141,41 @@ export default Ember.Route.extend({
        var Rejectedstatuscount =this.controllerFor('examinerdashbord').get('Rejectedstatuscount');
       this.controllerFor('examinerdashbord2').set('Rejectedstatuscount',Rejectedstatuscount);
       */
+        var insuredUserID =this.controllerFor('examinerdashbord').get('insuredUserID');
+       console.log("insuredUserID   1:",insuredUserID);
+       this.controllerFor('examinerdashbord2').set('insuredUserID',insuredUserID);
+      
+            var mycontroller =this;
+      $.ajax({
+            url: 'http://192.168.0.20:8082/images/id?userid='+insuredUserID ,
+            type: 'GET',
+            accepts: 'application/json',
+            
+             success: function(data) {
+                console.log("data ::"+JSON.stringify(data));
+                
+                //var imageDownloadUrl =data.images[0].url;
+                if(data.images.length !== null){
+                  for(var i=0 ;i< data.images.length ;i++){
+                var imageDownloadUrl_1 =data.images[0].url;
+                 console.log("imageDownloadUrl_1",imageDownloadUrl_1);
+                mycontroller.controllerFor('examinerdashbord2').set('imageDownloadUrl_1',imageDownloadUrl_1);
+                 var imageDownloadUrl_2 =data.images[1].url;
+                   console.log("imageDownloadUrl",imageDownloadUrl);
+                mycontroller.controllerFor('examinerdashbord2').set('imageDownloadUrl_2',imageDownloadUrl_2);
+                  var imageDownloadUrl_3 =data.images[2].url;
+                console.log("imageDownloadUrl",imageDownloadUrl);
+                mycontroller.controllerFor('examinerdashbord2').set('imageDownloadUrl_3',imageDownloadUrl_3);
+              }
+                }
+                return data;
+                    
+            },
+            error: function(err) {
+                
+                console.log(err);
+                console.log('DEBUG: GET Enquiries Failed');
+            }
+        }); 
     }
 });

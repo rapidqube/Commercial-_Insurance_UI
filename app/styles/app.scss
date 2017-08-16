@@ -272,7 +272,8 @@ body {
 //dashboard middle container
 .middle-container {
     background-color: white;
-    height: 1750px;
+    //height: 1900px;
+    min-height:1700px;
     border: 2px solid;
     margin-left: 0px;
     margin-right: 0px;
@@ -452,7 +453,7 @@ div.scroll-dash1 {
 }
 
 div.inner-scroll {
-    width: 630px;
+    width: 620px;
     overflow-x: hidden;
     overflow-y: scroll;
 }

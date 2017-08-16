@@ -1,6 +1,36 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+   /* actions:{
+      getimage:function(){
+
+         var insuredUserID =this.controllerFor('claimadjdashboard').get('insuredUserID');
+       console.log("insuredUserID   1:",insuredUserID);
+       this.controllerFor('claimadjdashboard2').set('insuredUserID',insuredUserID);
+       var mycontroller =this;
+      $.ajax({
+            url: 'http://192.168.0.20:8082/images/id?userid='+insuredUserID ,
+            type: 'GET',
+            accepts: 'application/json',
+           
+             success: function(data) {
+                console.log("respone ::"+JSON.stringify(data));
+                var imageDownloadUrl =data.images[0].url;
+                console.log("imageDownloadUrl",imageDownloadUrl);
+                mycontroller.controllerFor('claimadjdashboard2').set('imageDownloadUrl',imageDownloadUrl);
+                return data;
+                    
+            },
+            error: function(err) {
+                console.log(data);
+                console.log(err);
+                console.log('DEBUG: GET Enquiries Failed');
+            }
+        }); 
+
+    }
+      }
+    ,*/
     model(){
          this.controllerFor('claimadjdashboard2').set('isshowclaimform',true);
          this.controllerFor('examinerdashbord2').set('isShowingModalsss',false);
@@ -147,6 +177,44 @@ export default Ember.Route.extend({
        var Rejectedstatuscount =this.controllerFor('claimadjdashboard').get('Rejectedstatuscount');
       this.controllerFor('claimadjdashboard2').set('Rejectedstatuscount',Rejectedstatuscount);
 ***/
+      var insuredUserID =this.controllerFor('claimadjdashboard').get('insuredUserID');
+       console.log("insuredUserID   1:",insuredUserID);
+       this.controllerFor('claimadjdashboard2').set('insuredUserID',insuredUserID);
+
+        var mycontroller =this;
+      $.ajax({
+            url: 'http://192.168.0.20:8082/images/id?userid='+insuredUserID ,
+            type: 'GET',
+            accepts: 'application/json',
+            headers:{
+               'x-access-token':claimadjustertoken,
+             } ,
+             success: function(data) {
+                console.log("headr part ::"+JSON.stringify(data));
+                
+                //var imageDownloadUrl =data.images[0].url;
+                if(data.images.length !== null){
+                  for(var i=0 ;i< data.images.length ;i++){
+                var imageDownloadUrl_1 =data.images[0].url;
+                 console.log("imageDownloadUrl_1",imageDownloadUrl_1);
+                mycontroller.controllerFor('claimadjdashboard2').set('imageDownloadUrl_1',imageDownloadUrl_1);
+                 var imageDownloadUrl_2 =data.images[1].url;
+                   console.log("imageDownloadUrl",imageDownloadUrl);
+                mycontroller.controllerFor('claimadjdashboard2').set('imageDownloadUrl_2',imageDownloadUrl_2);
+                  var imageDownloadUrl_3 =data.images[2].url;
+                console.log("imageDownloadUrl",imageDownloadUrl);
+                mycontroller.controllerFor('claimadjdashboard2').set('imageDownloadUrl_3',imageDownloadUrl_3);
+              }
+                }
+                return data;
+                    
+            },
+            error: function(err) {
+                
+                console.log(err);
+                console.log('DEBUG: GET Enquiries Failed');
+            }
+        }); 
 
     }
 });

@@ -34,7 +34,7 @@ export default Ember.Controller.extend(Validations,{
     title:null,
     actions:{
    
-         claimaction:function(claimno,status,title,damagedetails,totaldamagevalue,totalclaimvalue,remark,assesseddamagevalue,assessedclaimvalue,negotiationlist,claimnotifieddate,claimsubmitteddate,claimexamineddate,claimvalidateddate,claimapproveddate,claimsettleddate,approvedclaim){
+         claimaction:function(claimno,status,title,damagedetails,totaldamagevalue,totalclaimvalue,remark,assesseddamagevalue,assessedclaimvalue,negotiationlist,claimnotifieddate,claimsubmitteddate,claimexamineddate,claimvalidateddate,claimapproveddate,claimsettleddate,approvedclaim,publicadjusterid,userid){
                 var claimno =claimno ;
                 console.log("claimno ::::",claimno);
                 this.set("claimno",claimno);
@@ -141,6 +141,9 @@ export default Ember.Controller.extend(Validations,{
                 this.set("settledate",settledate);
                
               }
+              var userid = userid;
+              console.log("userid ::::",userid);
+              this.set("insuredUserID",userid);
 
                 this.transitionToRoute('pubadjdashboard2');
         }

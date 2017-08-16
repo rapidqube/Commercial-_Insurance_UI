@@ -232,8 +232,8 @@ isShowingModalphoto:false,
 
                     fname.push(pubadjlist[i].firstname);
                     lname.push(pubadjlist[i].lastname);
-                   // fullname.push((pubadjlist[i].firstname).concat(pubadjlist[i].lastname));
-                      fullname.push(pubadjlist[i].firstname+' '+pubadjlist[i].lastname);
+                     //fullname.push((pubadjlist[i].firstname).concat(pubadjlist[i].lastname));
+                     fullname.push(pubadjlist[i].firstname+' '+pubadjlist[i].lastname);
 
                 }
                 console.log(JSON.stringify(fname));

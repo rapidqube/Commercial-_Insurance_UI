@@ -134,8 +134,9 @@ export default Ember.Route.extend({
 
       var Rejectedstatuscount =this.controllerFor('pubadjdashboard').get('Rejectedstatuscount');
       this.controllerFor('pubadjdashboard2').set('Rejectedstatuscount',Rejectedstatuscount);        
-   */           
-            
+   */     
+  
+
 
     }
 });

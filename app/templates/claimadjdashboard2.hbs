@@ -61,7 +61,7 @@
     <br>
     <br>
     
-    <div class ="claim-middle-container" style="width: 60%; float:left">
+    <div class ="claim-middle-container" style="width: 50%; float:left">
         <div class="panel panel-primary"  style="margin-left:10px;width:120%">
             <div class="panel-heading"> All Claim Details</div>
                 <!--<div class="scroll1">-->
@@ -72,7 +72,7 @@
                             <div class="form-group  col-sm-12">
                                 <label for="exampleInputEmail1">Title :</label>
                                    {{!-- {{validated-input type="text" model=this valuePath='title' placeholder="Enter Title" }}--}}
-                                <br/> <input type="text"  value={{title}} placeholder="Enter Title" size="40" disabled>   
+                                <br/> <input type="text"  value={{title}} placeholder="Enter Title" size="50" disabled>   
                             </div>
                             <div class="form-group col-sm-12">
                                 <label for="exampleInputEmail1">Damage Details :</label>
@@ -89,12 +89,12 @@
                                 <div class="form-group col-sm-12">
                                      <label for="exampleInputPassword1">Total Damage Value:</label>
                                      {{!--{{validated-input type="text" model=this valuePath='totaldamagevalue' placeholder="Enter your first name" disabled=isInvalid}}--}}
-                                    <br/> <input type="text"  value={{totaldamagevalue}} placeholder="Enter your first name" size="40" disabled>
+                                    <br/> <input type="text"  value={{totaldamagevalue}} placeholder="Enter your first name" size="50" disabled>
                                 </div>
                              <div class="form-group col-sm-12">
                                     <label for="exampleInputPassword1">Total Claim :</label>
                                     {{!-- {{validated-input type="text" model=this valuePath='totalclaim' placeholder="Enter your first name" }}--}}
-                                <br/> <input type="text"  value={{totaldamagevalue}} placeholder="Enter your first name" size="40" disabled>
+                                <br/> <input type="text"  value={{totaldamagevalue}} placeholder="Enter your first name" size="50" disabled>
                             </div>
                             <div class="form-group col-sm-12">
                                 <button type="submit" class="btn agree-btn-default" disabled>Submit details</button>
@@ -136,10 +136,10 @@
                                 {{#each claimadjsterarray as |item|}}
                                 <label>Claim-Adjuster Negogiation Value :</label>
                                 <div class="form-group  col-sm-12">  
-                                <li><input type="text" value={{item.negotiationvalue}} size="40" disabled>   </li>      
+                                <li><input type="text" value={{item.negotiationvalue}} size="50" disabled>   </li>      
                                     </div>
                                     <div class="form-group  col-sm-12">  
-                                <li><input type="text" value={{item.asperterm}} size="40" disabled>   </li>       
+                                <li><input type="text" value={{item.asperterm}} size="50" disabled>   </li>       
                                     </div>
                             
                                 {{/each}} 
@@ -147,10 +147,10 @@
                                  {{#each pubadjusterarray as |item|}}
                                 <label>Public-Adjuster Negogiation Value :</label>
                                 <div class="form-group  col-sm-12" >  
-                                <li><input type="text" value={{item.negotiationvalue}} size="40" disabled>   </li>      
+                                <li><input type="text" value={{item.negotiationvalue}} size="50" disabled>   </li>      
                                     </div>
                                     <div class="form-group  col-sm-12">  
-                                <li><input type="text" value={{item.asperterm}} size="40" disabled>   </li>       
+                                <li><input type="text" value={{item.asperterm}} size="50" disabled>   </li>       
                                     </div>
                             
                                 {{/each}} 
@@ -158,7 +158,7 @@
                                  
                             </ul>
                                             
-
+                                  </div>
                        <label class="col-sm-12">Neotiation for Claim-Adjuster:</label>
                         <div class="form-group col-sm-12">
                             <label for="exampleInputPassword1">Negotiated 1:</label>
@@ -181,7 +181,7 @@
                             {{!--{{validated-input type="text" model=this valuePath='payoutcalculated' placeholder="Enter base value" }}--}}
                            <br/><input type="text" model=this valuePath='payoutcalculated' placeholder="Enter base value" size="40" disabled>
                         </div> 
-                      </div>
+                    
                         <br/>
                         <br/>
                         <div class="form-group col-sm-3"></div>
@@ -217,8 +217,44 @@
                 </form>
            <!-- </div>-->
         </div>
+      
     </div>
+    
 
+<div style="width: 50%;float:right ">
+    <div></div>
+    <div style="margin-left:200px; margin-right:100px">
+        <table align="center" style="width:50px">
+  <tr>
+    <th style="padding:10px">Sr No</th>
+    <th style="padding:10px">Type</th>
+    <th style="padding:10px">Attachment</th>
+   
+  </tr>
+  <tr>
+    <td style="padding:10px">1</td>
+    <td  style="padding:10px">FIR</td>
+    <td  style="padding:10px"><a href={{imageDownloadUrl_1}} download>Downlod</a></td>
+
+  </tr>
+  <tr>
+    <td  style="padding:10px">2</td>
+    <td style="padding:10px">PHOTO</td>
+    <td style="padding:10px"><a href={{imageDownloadUrl_2}} download>Downlod</a></td>
+    
+  </tr>
+  <tr>
+    <td style="padding:10px">3</td>
+    <td style="padding:10px">Cerificates</td>
+    <td style="padding:10px"><a href={{imageDownloadUrl_3}} download>Downlod</a>  </td>
+  
+  </tr>
+  
+</table>
+<br/>
+</div>
+</div>
+<!--<button type="submit" {{action 'getimage'}}>download</button>-->
 
 
 </div>
