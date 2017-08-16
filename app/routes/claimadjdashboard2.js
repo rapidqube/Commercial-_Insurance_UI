@@ -206,6 +206,9 @@ export default Ember.Route.extend({
                 mycontroller.controllerFor('claimadjdashboard2').set('imageDownloadUrl_3',imageDownloadUrl_3);
               }
                 }
+                if(data.images.length === []){
+                  alert("This insured not uploaded the documents...");
+                }
                 return data;
                     
             },

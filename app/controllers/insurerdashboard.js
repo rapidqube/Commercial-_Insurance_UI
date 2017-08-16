@@ -5,6 +5,7 @@ export default Ember.Controller.extend({
     title:null,
     details:null,
     approvedclaim:null,
+    damagedetails:null,
     newclaimunable:false,
     isgetclaim:false,
     showformdetails:false,
@@ -20,6 +21,8 @@ export default Ember.Controller.extend({
                 this.set("assesseddamagevalue",null);
                 this.set("assessedclaimvalue",null);
                 this.set("negotiationlist",null);
+                this.set("damagecontent",null);
+                this.set("damagedetails",null);
            this.set("showformdetails",true);
            this.set("showotherformdetails",false);
             this.transitionToRoute('insurerdashboard2');
