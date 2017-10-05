@@ -98,7 +98,7 @@ export default Ember.Controller.extend(Validations, {
                         "password": password
                     };
                     console.log(JSON.stringify(datastring));
-                    console.log(CONFIG.GOURL);
+                   // console.log(CONFIG.GOURL);
                     var mycontroller = this;
                     var message;
                     var token;
