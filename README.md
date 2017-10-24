@@ -21,7 +21,7 @@ You will need the following things properly installed on your computer.
 ## Installation
 
 * `git clone <repository-url>` this repository
-* `cd cm-insurance`
+* `cd Commercial_Insurance_UI`
 * `npm install`
 
 ## Running / Development
