@@ -6,6 +6,7 @@ A short introduction of this app could easily go here.
 =>Technology used:- ember
 
 Project Description:-
+
 commercial insurance is insurance that protects businesses. It covers businesses against losses, arising from things like damage to property or injury to employees, and is a term commonly used to label core business insurance covers like public liability and employers’ liability.Many business insurance policies include basic coverages such as property, liability, crime and commercial auto insurance, as well as other optional insurance, such as business interruption insurance, equipment breakdown insurance, and workers compensation.
 
 ## Prerequisites
